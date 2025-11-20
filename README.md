@@ -9,11 +9,12 @@ Notes:
   - hostname
   - path
   - path_match_type? (default path-prefix)
-  - service (remember to just take the left hand portion and split the port off and use the port in the backend ref)
+  - service
+  - port
   - gateway
   - gateway_namespace?
   - could be a bunch more here, but this is where we start
-  - 
+
   
 
 
