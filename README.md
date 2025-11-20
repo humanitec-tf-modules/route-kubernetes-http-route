@@ -1,4 +1,22 @@
-# TF module template repository
+# Route
+
+Notes:
+
+- http routes are merged on the gateway and so multiple http routes can overlap with hostnames and rules.
+- this means we don't need any weird coprovisoining like we did with nginx ingress
+- we can just create a route as is
+- variables:
+  - hostname
+  - path
+  - path_match_type? (default path-prefix)
+  - service (remember to just take the left hand portion and split the port off and use the port in the backend ref)
+  - gateway
+  - gateway_namespace?
+  - could be a bunch more here, but this is where we start
+  - 
+  
+
+
 
 Use this [GitHub template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository) as a starting point for any new Terraform/OpenTofu (TF) module repository in this GitHub organization.
 
