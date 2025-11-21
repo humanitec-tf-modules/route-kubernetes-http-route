@@ -1,6 +1,6 @@
 # route-kubernetes-http-route
 
-This is a Terraform / OpentTofu compatible module to provision Gateway API `HTTPRoute` resources on top of Kubernetes for the Humanitec platform orchestrator.
+This is a Terraform / OpenTofu compatible module to provision Gateway API `HTTPRoute` resources on top of Kubernetes for the Humanitec platform orchestrator.
 
 If we assume this is used to back a `route` resource type, the developer may use this as:
 
@@ -29,7 +29,7 @@ workloads:
     hctl create resource-type route --set=description='Kubernetes HTTP Route' --set=output_schema='{"type":"object","properties":{}}'
     ```
 
-Note that the module produces no outputs, so the resource type doesn't need to declare any.
+Note that the module produces no resource outputs other than metadata, so the resource type doesn't need to declare any output schema.
 
 ## Installation
 
@@ -37,7 +37,7 @@ Install this with the `hctl` CLI, you should replace the `CHANGEME` in the modul
 
 ```shell
 hctl create module \
-    --set=resource_type=k8s-service-account \
+    --set=resource_type=route \
     --set=module_source=git::https://github.com/humanitec-tf-modules/route-kubernetes-http-route?ref=CHANGEME \
     --set=provider_mapping='{"kubernetes": "CHANGEME"}' \
     --set=dependencies='{"ns":{"type":"k8s-namespace","id":"env-namespace"}}' \

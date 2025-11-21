@@ -21,7 +21,7 @@ run "test" {
     gateway_namespace = "infra"
     path_match_type   = "Exact"
     filters = [{
-      type = "RequestheaderModifier"
+      type = "RequestHeaderModifier"
       requestHeaderModifier = {
         add = [{
           name  = "X-Example"
