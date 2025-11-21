@@ -49,12 +49,6 @@ variable "additional_labels" {
   default     = {}
 }
 
-variable "name_prefix" {
-  type        = string
-  description = "The name prefix to use for the generated http route"
-  default     = "route-"
-}
-
 variable "gateway_namespace" {
   type        = string
   description = "The namespace of the var.gateways"
