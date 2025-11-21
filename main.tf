@@ -4,7 +4,7 @@ resource "kubernetes_manifest" "route" {
     kind       = "HTTPRoute"
     metadata = {
       namespace     = var.namespace
-      namePrefix = var.name_prefix
+      generateName = var.name_prefix
       annotations   = var.additional_annotations
       labels        = var.additional_labels
     }
