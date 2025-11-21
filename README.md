@@ -53,11 +53,17 @@ You can also use any of the input parameters described further down this documen
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | >= 2.0.0 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.0.0 |
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.38.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | 3.7.2 |
 
 ## Modules
 
@@ -65,13 +71,30 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [kubernetes_manifest.route](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/manifest) | resource |
+| [random_id.id](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/id) | resource |
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_additional_annotations"></a> [additional\_annotations](#input\_additional\_annotations) | Additional annotations to add to the http route. | `map(string)` | `null` | no |
+| <a name="input_additional_labels"></a> [additional\_labels](#input\_additional\_labels) | Additional labels to add to the http route. | `map(string)` | `null` | no |
+| <a name="input_filters"></a> [filters](#input\_filters) | Additional Gateway HTTPRoute filters to inject on this route | `list(any)` | `null` | no |
+| <a name="input_gateway_namespace"></a> [gateway\_namespace](#input\_gateway\_namespace) | The namespace of the var.gateways | `string` | `null` | no |
+| <a name="input_gateways"></a> [gateways](#input\_gateways) | The name of the Gateway API Gateways to connect this route to | `list(string)` | n/a | yes |
+| <a name="input_hostname"></a> [hostname](#input\_hostname) | The hostname to match traffic to this route | `string` | n/a | yes |
+| <a name="input_namespace"></a> [namespace](#input\_namespace) | The namespace to create route in, this should be the same namespace as the backing service | `string` | n/a | yes |
+| <a name="input_path"></a> [path](#input\_path) | The path to match | `string` | n/a | yes |
+| <a name="input_path_match_type"></a> [path\_match\_type](#input\_path\_match\_type) | The path match strategy | `string` | `"PathPrefix"` | no |
+| <a name="input_service"></a> [service](#input\_service) | The service name to route traffic to within the cluster | `string` | n/a | yes |
+| <a name="input_service_port"></a> [service\_port](#input\_service\_port) | The service port to route traffic to | `number` | n/a | yes |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_humanitec_metadata"></a> [humanitec\_metadata](#output\_humanitec\_metadata) | Metadata for Humanitec. |
 <!-- END_TF_DOCS -->
