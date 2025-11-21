@@ -57,12 +57,12 @@ variable "gateway_namespace" {
 
 variable "path_match_type" {
   type        = string
-  default     = "Prefix"
+  default     = "PathPrefix"
   description = "The path match strategy"
 
   validation {
-    condition     = var.path_match_type == "Prefix" || var.path_match_type == "Exact" || var.path_match_type == "RegularExpression"
-    error_message = "path_match_type must be Prefix, Exact, or RegularExpression"
+    condition     = var.path_match_type == "PathPrefix" || var.path_match_type == "Exact" || var.path_match_type == "RegularExpression"
+    error_message = "path_match_type must be PathPrefix, Exact, or RegularExpression"
   }
 }
 
