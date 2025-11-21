@@ -40,13 +40,13 @@ variable "gateways" {
 variable "additional_annotations" {
   type        = map(string)
   description = "Additional annotations to add to the http route."
-  default     = {}
+  default     = null
 }
 
 variable "additional_labels" {
   type        = map(string)
   description = "Additional labels to add to the http route."
-  default     = {}
+  default     = null
 }
 
 variable "gateway_namespace" {
@@ -69,5 +69,5 @@ variable "path_match_type" {
 variable "filters" {
   type        = list(any)
   description = "Additional Gateway HTTPRoute filters to inject on this route"
-  default     = []
+  default     = null
 }
