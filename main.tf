@@ -3,7 +3,9 @@ resource "random_id" "id" {
 }
 
 locals {
-  service_name = split(".", var.service)[0]
+  service_name_parts = split(".", var.service)
+  service_name       = local.service_name_parts[0]
+  service_namespace  = length(local.service_name_parts) > 0 ? local.service_name_parts[1] : null
 }
 
 resource "kubernetes_manifest" "route" {
@@ -26,12 +28,13 @@ resource "kubernetes_manifest" "route" {
             value = var.path
           }
         }]
+        filters = var.filters
         backendRefs = [{
-          name = local.service_name
-          port = var.service_port
+          name      = local.service_name
+          namespace = local.service_namespace
+          port      = var.service_port
         }]
       }]
     }
   }
-  computed_fields = ["metadata.name"]
 }
