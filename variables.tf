@@ -39,13 +39,13 @@ variable "gateways" {
 
 variable "additional_annotations" {
   type        = map(string)
-  description = "Additional annotations to add to the service account."
+  description = "Additional annotations to add to the http route."
   default     = {}
 }
 
 variable "additional_labels" {
   type        = map(string)
-  description = "Additional labels to add to the service account."
+  description = "Additional labels to add to the http route."
   default     = {}
 }
 
