@@ -17,7 +17,6 @@ run "test" {
     additional_labels = {
       mylabel = "label-value"
     }
-    name_prefix       = "route-"
     gateway_namespace = "infra"
     path_match_type   = "Exact"
     filters = [{

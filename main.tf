@@ -5,7 +5,7 @@ resource "random_id" "id" {
 locals {
   service_name_parts = split(".", var.service)
   service_name       = local.service_name_parts[0]
-  service_namespace  = length(local.service_name_parts) > 0 ? local.service_name_parts[1] : null
+  service_namespace  = length(local.service_name_parts) > 1 ? local.service_name_parts[1] : null
 }
 
 resource "kubernetes_manifest" "route" {
