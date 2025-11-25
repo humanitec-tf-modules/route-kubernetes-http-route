@@ -83,7 +83,7 @@ No modules.
 | <a name="input_additional_annotations"></a> [additional\_annotations](#input\_additional\_annotations) | Additional annotations to add to the http route. | `map(string)` | `null` | no |
 | <a name="input_additional_labels"></a> [additional\_labels](#input\_additional\_labels) | Additional labels to add to the http route. | `map(string)` | `null` | no |
 | <a name="input_filters"></a> [filters](#input\_filters) | Additional Gateway HTTPRoute filters to inject on this route | `list(any)` | `null` | no |
-| <a name="input_gateway_namespace"></a> [gateway\_namespace](#input\_gateway\_namespace) | The namespace of the var.gateways | `string` | `null` | no |
+| <a name="input_gateway_namespace"></a> [gateway\_namespace](#input\_gateway\_namespace) | The namespace where the gateways are located if not in the route namespace | `string` | `null` | no |
 | <a name="input_gateways"></a> [gateways](#input\_gateways) | The name of the Gateway API Gateways to connect this route to | `list(string)` | n/a | yes |
 | <a name="input_hostname"></a> [hostname](#input\_hostname) | The hostname to match traffic to this route | `string` | n/a | yes |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | The namespace to create route in, this should be the same namespace as the backing service | `string` | n/a | yes |
