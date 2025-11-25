@@ -51,7 +51,7 @@ variable "additional_labels" {
 
 variable "gateway_namespace" {
   type        = string
-  description = "The namespace of the var.gateways"
+  description = "The namespace where the gateways are located if not in the route namespace"
   default     = null
 }
 

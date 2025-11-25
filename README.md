@@ -1,8 +1,8 @@
 # route-kubernetes-http-route
 
-This is a Terraform / OpenTofu compatible module to provision Gateway API `HTTPRoute` resources on top of Kubernetes for the Humanitec platform orchestrator.
+This is a Terraform / OpenTofu compatible module to provision [Gateway API `HTTPRoute`](https://kubernetes.io/docs/concepts/services-networking/gateway/#api-kind-httproute) resources on top of Kubernetes for the Humanitec Platform Orchestrator.
 
-If we assume this is used to back a `route` resource type, the developer may use this as:
+If we assume this is used to back a `route` resource type, the developer may use it like this in a deploment manifest:
 
 ```yaml
 workloads:

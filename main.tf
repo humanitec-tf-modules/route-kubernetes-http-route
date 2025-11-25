@@ -28,12 +28,12 @@ resource "kubernetes_manifest" "route" {
             value = var.path
           }
         }]
-        filters = var.filters
-        backendRefs = [{
+        filters = var.filters != null ? var.filters : []
+        backendRefs = [merge({
           name      = local.service_name
           namespace = local.service_namespace
           port      = var.service_port
-        }]
+        }, local.service_namespace != null ? { namespace = local.service_namespace } : {})]
       }]
     }
   }
