@@ -1,6 +1,32 @@
-# See https://developer.hashicorp.com/terraform/language/tests for more on how to write tests.
-# See https://developer.hashicorp.com/terraform/language/tests/mocking for information on mocking providers.
+mock_provider "kubernetes" {}
 
-run "my_example_test" {
+run "test" {
   command = plan
+
+  variables {
+    namespace    = "default"
+    path         = "/some/path"
+    service      = "my-backend"
+    service_port = 8080
+    hostname     = "example.com"
+    gateways     = ["my-gateway"]
+
+    additional_annotations = {
+      name = "example-annotation"
+    }
+    additional_labels = {
+      mylabel = "label-value"
+    }
+    gateway_namespace = "infra"
+    path_match_type   = "Exact"
+    filters = [{
+      type = "RequestHeaderModifier"
+      requestHeaderModifier = {
+        add = [{
+          name  = "X-Example"
+          value = "some-value"
+        }]
+      }
+    }]
+  }
 }
